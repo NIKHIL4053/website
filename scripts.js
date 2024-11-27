@@ -1,4 +1,4 @@
-document.getElementById('contact-form').addEventListener('submit', function (e) {
-    e.preventDefault();
-    alert('Thank you for contacting us! We will get back to you soon.');
-});
+function subscribe() {
+    alert("Thank you for your interest! We will notify you when we launch in your city.");
+  }
+  
