@@ -1,66 +1,96 @@
 /* General Reset */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: linear-gradient(135deg, #a2d2ff, #ffafcc);
-    overflow: hidden;
-    color: #ffffff;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #a2d2ff, #ffafcc);
+  overflow: hidden;
+  color: #ffffff;
+  position: relative;
+}
+
+/* Custom Geometric Background Design */
+body::before,
+body::after {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20%;
+  z-index: -1;
+  animation: float 6s ease-in-out infinite;
+}
+
+body::before {
+  top: 10%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.2);
+  width: 200px;
+  height: 200px;
+}
+
+body::after {
+  bottom: 10%;
+  right: 20%;
+  transform: translate(50%, 50%);
+  background: rgba(255, 255, 255, 0.15);
+  width: 150px;
+  height: 150px;
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) scale(1);
   }
-  
-  /* Background Design */
-  body::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: url('https://www.transparenttextures.com/patterns/cubes.png'); /* Subtle geometric pattern */
-    opacity: 0.1;
-    z-index: -1;
+  50% {
+    transform: translateY(-20px) scale(1.1);
   }
-  
-  .container {
-    text-align: center;
-    padding: 30px 20px;
-    background: rgba(255, 255, 255, 0.9); /* Brighter white background with slight transparency */
-    border-radius: 15px;
-    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(8px); /* Smooth glassy effect */
-  }
-  
-  .headline {
-    font-size: 2.5rem;
-    margin: 0;
-    color: #00203f; /* Darker text color for better contrast */
-  }
-  
-  .subtext {
-    font-size: 1.2rem;
-    margin: 10px 0 20px;
-    color: #3a3a3a; /* Dark gray for better readability */
-  }
-  
-  .notify-btn {
-    background-color: #00509e;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .notify-btn:hover {
-    background-color: #0077c8; /* Lighter blue on hover */
-    transform: scale(1.05);
-  }
-  
-  .notify-btn:active {
-    transform: scale(0.95);
-  }
-  
+}
+
+.container {
+  text-align: center;
+  padding: 30px 20px;
+  background: rgba(255, 255, 255, 0.9); /* Brighter white background with slight transparency */
+  border-radius: 15px;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px); /* Smooth glassy effect */
+}
+
+.headline {
+  font-size: 2.5rem;
+  margin: 0;
+  color: #00203f; /* Darker text color for better contrast */
+}
+
+.subtext {
+  font-size: 1.2rem;
+  margin: 10px 0 20px;
+  color: #3a3a3a; /* Dark gray for better readability */
+}
+
+.notify-btn {
+  background-color: #00509e;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.notify-btn:hover {
+  background-color: #0077c8; /* Lighter blue on hover */
+  transform: scale(1.05);
+}
+
+.notify-btn:active {
+  transform: scale(0.95);
+}
